@@ -6,16 +6,16 @@ import AppMenuItem from './AppMenuItem.vue';
 const model = ref([
     {
         label: 'Home',
-        items: [{ label: 'Beranda', icon: 'pi pi-fw pi-home', to: '/' }]
+        items: [{ label: 'BERANDA', icon: 'pi pi-fw pi-home', to: '/' }]
     },
     {
         label: 'Menu',
         items: [
             { label: 'JUAL BEAT', icon: 'pi pi-fw pi-id-card', to: '/pages/crud' },
-            { label: 'Daftar Beat', icon: 'pi pi-fw pi-check-square', to: '/uikit/list' },
-            { label: 'User', icon: 'pi pi-fw pi-users', to: '/pages/users', class: 'rotated-icon' },
-            { label: 'Transaksi', icon: 'pi pi-fw pi-globe', class: 'rotated-icon' },
-            { label: 'Logout', icon: 'pi pi-fw pi-power-off', class: 'rotated-icon' }
+            { label: 'DAFTAR BEAT', icon: 'pi pi-fw pi-check-square', to: '/uikit/list' },
+            { label: 'USERS', icon: 'pi pi-fw pi-users', to: '/pages/users', class: 'rotated-icon' },
+            { label: 'TRANSAKSI', icon: 'pi pi-fw pi-globe', class: 'rotated-icon' },
+            { label: 'KELUAR', icon: 'pi pi-fw pi-power-off', class: 'rotated-icon' }
 
             // { label: 'Table', icon: 'pi pi-fw pi-table', to: '/uikit/table' },
             // { label: 'List', icon: 'pi pi-fw pi-list', to: '/uikit/list' },
