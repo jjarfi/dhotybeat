@@ -15,6 +15,7 @@ const model = ref([
             { label: 'DAFTAR BEAT', icon: 'pi pi-fw pi-check-square', to: '/uikit/list' },
             { label: 'USERS', icon: 'pi pi-fw pi-users', to: '/pages/users', class: 'rotated-icon' },
             { label: 'TRANSAKSI', icon: 'pi pi-fw pi-globe', class: 'rotated-icon' },
+            { label: 'RIWAYAT TRANSAKSI', icon: 'pi pi-fw pi-globe', class: 'rotated-icon' },
             { label: 'KELUAR', icon: 'pi pi-fw pi-power-off', class: 'rotated-icon' }
 
             // { label: 'Table', icon: 'pi pi-fw pi-table', to: '/uikit/table' },
