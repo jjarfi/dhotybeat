@@ -1,8 +1,10 @@
 <script setup>
 import { useLayout } from '@/layout/composables/layout';
 import AppConfigurator from './AppConfigurator.vue';
+import AppProfil from './AppProfil.vue';
 
 const { onMenuToggle, toggleDarkMode, isDarkTheme } = useLayout();
+
 </script>
 
 <template>
@@ -49,6 +51,20 @@ const { onMenuToggle, toggleDarkMode, isDarkTheme } = useLayout();
                     </button>
                     <AppConfigurator />
                 </div>
+
+                <!-- PESAN BELL -->
+                <div class="relative">
+                    <button type="button" class="layout-topbar-action">
+                        <i class="pi pi-bell"></i>
+                        <span>Messages</span>
+                    </button> 
+                </div>
+               
+
+                <!-- PROFIL -->
+                <div class="relative">
+                    <AppProfil />
+                </div>
             </div>
 
             <button
@@ -57,24 +73,6 @@ const { onMenuToggle, toggleDarkMode, isDarkTheme } = useLayout();
             >
                 <i class="pi pi-ellipsis-v"></i>
             </button>
-
-            <div class="layout-topbar-menu hidden lg:block">
-                <div class="layout-topbar-menu-content">
-                     
-                     <!-- <button type="button" class="layout-topbar-action">
-                        <i class="pi pi-calendar"></i>
-                        <span>Calendar</span>
-                    </button> -->
-                    <button type="button" class="layout-topbar-action">
-                        <i class="pi pi-bell"></i>
-                        <span>Messages</span>
-                    </button> 
-                    <button type="button" class="layout-topbar-action">
-                        <i class="pi pi-user"></i>
-                        <span>Profile</span>
-                    </button>
-                </div>
-            </div>
         </div>
     </div>
 </template>

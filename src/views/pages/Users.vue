@@ -163,13 +163,14 @@ const getStatusLabel = (status) => {
 
                 <!-- <Column selectionMode="multiple" style="width: 3rem" :exportable="false"></Column> -->
                 <!-- <Column field="code" header="Code" sortable style="min-width: 12rem"></Column> -->
-                <Column field="name" header="Nama" sortable style="min-width: 16rem"></Column>
+                <Column field="name" header="NAMA" sortable style="min-width: 16rem"></Column>
+
                 <!-- <Column header="Cover">
                     <template #body="slotProps">
                         <img :src="`https://primefaces.org/cdn/primevue/images/product/${slotProps.data.image}`" :alt="slotProps.data.image" class="rounded" style="width: 64px" />
                     </template>
                 </Column> -->
-                <Column field="name" header="Email" sortable style="min-width: 8rem">
+                <Column field="name" header="EMAIL" sortable style="min-width: 8rem">
                     <!-- <template #body="slotProps">
                         {{ formatCurrency(slotProps.data.price) }}
                     </template> -->
@@ -179,21 +180,23 @@ const getStatusLabel = (status) => {
                         {{ formatCurrency(slotProps.data.price) }}
                     </template>
                 </Column> -->
-                <Column field="name" header="Username" sortable style="min-width: 10rem"></Column>
+                <Column field="name" header="USERNAME" sortable style="min-width: 10rem"></Column>
+                <Column field="name" header="NO HP" sortable style="min-width: 10rem"></Column>
+
                 <!-- <Column field="rating" header="Reviews" sortable style="min-width: 12rem">
                     <template #body="slotProps">
                         <Rating :modelValue="slotProps.data.rating" :readonly="true" />
                     </template>
                 </Column> -->
-                <Column field="inventoryStatus" header="Status" sortable style="min-width: 12rem">
+                <Column field="inventoryStatus" header="STATUS" sortable style="min-width: 12rem">
                     <template #body="slotProps">
                         <Tag :value="slotProps.data.inventoryStatus" :severity="getStatusLabel(slotProps.data.inventoryStatus)" />
                     </template>
                 </Column>
                 <Column :exportable="false" style="min-width: 12rem">
                     <template #body="slotProps">
-                        <Button icon="pi pi-pencil" outlined rounded class="mr-2" @click="editProduct(slotProps.data)" />
-                        <Button icon="pi pi-trash" outlined rounded severity="danger" @click="confirmDeleteProduct(slotProps.data)" />
+                        <Button icon="pi pi-pencil" raised class="mr-3" @click="editProduct(slotProps.data)" />
+                        <Button icon="pi pi-trash" raised severity="danger" @click="confirmDeleteProduct(slotProps.data)" />
                     </template>
                 </Column>
             </DataTable>
@@ -203,7 +206,7 @@ const getStatusLabel = (status) => {
             <div class="flex flex-col gap-6">
                 <!-- <img v-if="product.image" :src="`https://primefaces.org/cdn/primevue/images/product/${product.image}`" :alt="product.image" class="block m-auto pb-4" /> -->
                 <div>
-                    <label for="name" class="block font-bold mb-3">Nama</label>
+                    <label for="name" class="block font-bold mb-3">Nama Depan</label>
                     <InputText id="name" v-model.trim="product.name" required="true" autofocus :invalid="submitted && !product.name" fluid />
                     <small v-if="submitted && !product.name" class="text-red-500">Name is required.</small>
                 </div>

@@ -4,6 +4,9 @@ import { computed, ref, watch } from 'vue';
 import AppFooter from './AppFooter.vue';
 import AppSidebar from './AppSidebar.vue';
 import AppTopbar from './AppTopbar.vue';
+import PlayBar from './PlayBar.vue';
+
+
 
 const { layoutConfig, layoutState, isSidebarActive, resetMenu } = useLayout();
 
@@ -51,17 +54,25 @@ const isOutsideClicked = (event) => {
 </script>
 
 <template>
-    <div class="layout-wrapper" :class="containerClass">
-        <app-topbar></app-topbar>
-        <app-sidebar></app-sidebar>
-        <div class="layout-main-container">
-            <div class="layout-main">
-                <router-view></router-view>
-            </div>
-            <app-footer></app-footer>
-        </div>
-        <div class="layout-mask animate-fadein"></div>
-    </div>
-    <Toast />
     
+    <div class="layout-wrapper" style="width: auto;" :class="containerClass">
+       
+       <app-topbar></app-topbar>
+
+       <app-sidebar></app-sidebar>
+       
+       <div class="layout-main-container" style="padding-left: 10px; padding-right: 10px;">
+       <div class="layout-main">
+        <router-view></router-view>
+        </div>        
+           <app-footer></app-footer>
+       </div>
+       <div class="layout-mask animate-fadein">
+
+       </div>
+   </div>
+
+    <Toast />
+    <PlayBar/>
+
 </template>
