@@ -87,7 +87,7 @@
       <Divider type="dotted" />
       <div class="flex justify-center">
         <AvatarGroup>
-            <Avatar image="src\image\google.png" size="large" shape="circle" />
+            <Avatar image="public/demo/images/google.png" size="large" shape="circle" />
         </AvatarGroup>
     </div>
     </Dialog>
@@ -161,7 +161,7 @@
       <Divider type="dotted" />
       <div class="flex justify-center">
         <AvatarGroup>
-            <Avatar image="src\image\google.png" size="large" shape="circle" />
+            <Avatar image="public/demo/images/google.png" size="large" shape="circle" />
         </AvatarGroup>
     </div>
      
