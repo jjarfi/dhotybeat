@@ -20,6 +20,10 @@ const items = ref([
                 icon: 'pi pi-refresh'
             },
             {
+                label: 'Pesan',
+                icon: 'pi pi-bell'
+            },
+            {
                 label: 'Akun',
                 icon: 'pi pi-user',
                 command: (event) => {

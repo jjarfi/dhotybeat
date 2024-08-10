@@ -36,16 +36,7 @@ const { onMenuToggle, toggleDarkMode, isDarkTheme } = useLayout();
                     </button>
                     <AppConfigurator />
                 </div>
-
-                <!-- PESAN BELL -->
-                <div class="relative">
-                    <button type="button" class="layout-topbar-action">
-                        <i class="pi pi-bell"></i>
-                        <span>Messages</span>
-                    </button> 
-                </div>
                
-
                 <!-- PROFIL -->
                 <div class="relative">
                     <AppProfil />
