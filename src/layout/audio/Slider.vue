@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
     <div
       ref="wrapper"
       class="flex items-center justify-center cursor-pointer"
@@ -149,4 +149,4 @@
     window.cancelAnimationFrame(frameRequest)
   })
   </script>
-  
+   -->
