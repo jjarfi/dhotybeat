@@ -6,36 +6,11 @@ const { getPrimary, getSurface, isDarkTheme } = useLayout();
 const chartData = ref(null);
 const chartOptions = ref(null);
 
-// Data for carousel items
-const items = ref([
-  { src: 'public\demo\images\logo-white.svg', alt: 'Image 1' },
-  { src: 'public\demo\images\logo-white.svg', alt: 'Image 2' },
-  { src: 'public\demo\images\logo-white.svg', alt: 'Image 3' },
-  { src: 'public\demo\images\logo-white.svg', alt: 'Image 4' },
-  { src: 'public\demo\images\logo-white.svg', alt: 'Image 5' }
-]);
-
-// Active item index
-const activeIndex = ref(0);
-
-// Function to go to the next item
-const nextItem = () => {
-  activeIndex.value = (activeIndex.value + 1) % items.value.length;
-};
-
-// Function to go to the previous item
-const prevItem = () => {
-  activeIndex.value = (activeIndex.value - 1 + items.value.length) % items.value.length;
-};
 
 onMounted(() => {
   
 });
 
-
-const formatCurrency = (value) => {
-    return value.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
-};
 
 
 </script>
@@ -44,7 +19,7 @@ const formatCurrency = (value) => {
     <!-- SVG DHOTY BEAT -->
             
   <div class="svg-container">
-    <svg xmlns="http://www.w3.org/2000/svg"  
+    <!-- <svg xmlns="http://www.w3.org/2000/svg"  
       width="100%"
       height="100"
       fill="var(--primary-color)"
@@ -58,71 +33,7 @@ const formatCurrency = (value) => {
 <path d="M0 0 C1.64308048 0.2396159 3.28572081 0.48270532 4.92578125 0.7421875 C6.99987339 1.04199073 6.99987339 1.04199073 9.10546875 1.0078125 C11.1875 1.0625 11.1875 1.0625 15 2 C19.28748335 8.84982546 21.03371535 16.57156612 23.125 24.3125 C23.80857747 26.83132747 24.50013501 29.34759105 25.1953125 31.86328125 C25.49453613 32.96969971 25.79375977 34.07611816 26.10205078 35.21606445 C26.91403622 38.16626351 26.91403622 38.16626351 29 41 C29.99 41.33 30.98 41.66 32 42 C33.37407134 44.85384047 32.95284958 46.1634548 32.0625 49.25 C31.5365625 50.61125 31.5365625 50.61125 31 52 C31.99 52.66 32.98 53.32 34 54 C34 54.66 34 55.32 34 56 C33.34 56 32.68 56 32 56 C32.0721875 56.79664063 32.144375 57.59328125 32.21875 58.4140625 C32.3115625 59.47367188 32.404375 60.53328125 32.5 61.625 C32.5928125 62.66914062 32.685625 63.71328125 32.78125 64.7890625 C32.99124355 67.87146788 33.03709727 70.91165229 33 74 C32.01 74 31.02 74 30 74 C30 73.34 30 72.68 30 72 C27.69 72 25.38 72 23 72 C22.505 73.485 22.505 73.485 22 75 C21.01 75 20.02 75 19 75 C16.72942897 68.95942424 15.51085812 63.43681228 15 57 C9.39 57 3.78 57 -2 57 C-2.53625 58.959375 -3.0725 60.91875 -3.625 62.9375 C-5.44567758 68.8595616 -7.61986621 74.47970192 -12 79 C-12.99 79 -13.98 79 -15 79 C-15 77.68 -15 76.36 -15 75 C-15.66 75 -16.32 75 -17 75 C-17.99 72.03 -17.99 72.03 -19 69 C-19.45375 69.495 -19.9075 69.99 -20.375 70.5 C-22 72 -22 72 -24 72 C-21.67469001 61.08893004 -18.6651243 50.71615902 -14.625 40.3125 C-8.42188689 24.7998886 -8.42188689 24.7998886 -4.5 8.6328125 C-4.335 7.76398437 -4.17 6.89515625 -4 6 C-3.34 5.67 -2.68 5.34 -2 5 C-1.27840576 3.35636866 -0.60648579 1.68949614 0 0 Z M7 29 C6.30062798 30.4317616 5.61587282 31.87067032 4.9375 33.3125 C4.55464844 34.11300781 4.17179687 34.91351563 3.77734375 35.73828125 C2.70264486 38.12028753 2.70264486 38.12028753 4 41 C5.98 41 7.96 41 10 41 C9.87625 39.7625 9.7525 38.525 9.625 37.25 C9.52058594 36.20585938 9.52058594 36.20585938 9.4140625 35.140625 C8.96467035 32.8173524 8.14225762 31.0616357 7 29 Z "  transform="translate(492,4)"/>
 <path d="M0 0 C2.875 2.1875 2.875 2.1875 5 5 C5.3125 7.8125 5.3125 7.8125 5 10 C5.99 10.33 6.98 10.66 8 11 C8 12.32 8 13.64 8 15 C-0.91 16.485 -0.91 16.485 -10 18 C-10.185625 21.83625 -10.185625 21.83625 -10.375 25.75 C-10.82307712 34.37957578 -11.3582613 43.00329839 -11.9375 51.625 C-12.01210449 52.80932617 -12.08670898 53.99365234 -12.16357422 55.21386719 C-12.61049346 61.67180452 -13.40103098 67.72454838 -15 74 C-16.32 74 -17.64 74 -19 74 C-20.35827971 72.35360035 -21.69254251 70.68704193 -23 69 C-23.99 69 -24.98 69 -26 69 C-26.33 69.99 -26.66 70.98 -27 72 C-28.485 71.505 -28.485 71.505 -30 71 C-29.47443654 53.56579135 -27.87035969 36.33117873 -26 19 C-27.03640625 19.01160156 -28.0728125 19.02320312 -29.140625 19.03515625 C-30.51041486 19.04453837 -31.88020668 19.05363812 -33.25 19.0625 C-34.27287109 19.07506836 -34.27287109 19.07506836 -35.31640625 19.08789062 C-42.22699176 19.12143716 -42.22699176 19.12143716 -45 18 C-46.52164099 15.10888212 -47 13.28176588 -47 10 C-47.99 9.67 -48.98 9.34 -50 9 C-49 6 -49 6 -46 4 C-42.07838084 2.96870915 -38.16328108 2.74316531 -34.125 2.5 C-32.15273438 2.37625 -32.15273438 2.37625 -30.140625 2.25 C-28.06710405 2.12421295 -25.99351384 1.99961022 -23.91992188 1.875 C-21.90477894 1.75275436 -19.8898851 1.62642416 -17.875 1.5 C-16.67617188 1.4278125 -15.47734375 1.355625 -14.2421875 1.28125 C-9.38421698 0.85983569 -4.87932816 -0.60991602 0 0 Z " transform="translate(569,1)"/>
 <path d="M0 0 C2 1 2 1 2 1 Z "  transform="translate(501,76)" />
-</svg>
+</svg> -->
   </div>
 
-
-    <!-- <div class="grid grid-cols-12 gap-8">
-        <div class="col-span-12 lg:col-span-6 xl:col-span-3">
-            <div class="card mb-0">
-                <div class="flex justify-between mb-4">
-                    <div>
-                        <span class="block text-muted-color font-medium mb-4">Sample</span>
-                        <div class="text-surface-900 dark:text-surface-0 font-medium text-xl">sample</div>
-                    </div>
-                    <div class="flex items-center justify-center bg-blue-100 dark:bg-blue-400/10 rounded-border" style="width: 2.5rem; height: 2.5rem">
-                        <i class="pi pi-shopping-cart text-blue-500 !text-xl"></i>
-                    </div>
-                </div>
-                <span class="text-primary font-medium">24 sample </span>
-                <span class="text-muted-color">sample sample</span>
-            </div>
-        </div>
-        <div class="col-span-12 lg:col-span-6 xl:col-span-3">
-            <div class="card mb-0">
-                <div class="flex justify-between mb-4">
-                    <div>
-                        <span class="block text-muted-color font-medium mb-4">Sample</span>
-                        <div class="text-surface-900 dark:text-surface-0 font-medium text-xl">$2.100</div>
-                    </div>
-                    <div class="flex items-center justify-center bg-orange-100 dark:bg-orange-400/10 rounded-border" style="width: 2.5rem; height: 2.5rem">
-                        <i class="pi pi-dollar text-orange-500 !text-xl"></i>
-                    </div>
-                </div>
-                <span class="text-primary font-medium">%52+ </span>
-                <span class="text-muted-color">sample sample</span>
-            </div>
-        </div>
-        <div class="col-span-12 lg:col-span-6 xl:col-span-3">
-            <div class="card mb-0">
-                <div class="flex justify-between mb-4">
-                    <div>
-                        <span class="block text-muted-color font-medium mb-4">Sample</span>
-                        <div class="text-surface-900 dark:text-surface-0 font-medium text-xl">28441</div>
-                    </div>
-                    <div class="flex items-center justify-center bg-cyan-100 dark:bg-cyan-400/10 rounded-border" style="width: 2.5rem; height: 2.5rem">
-                        <i class="pi pi-users text-cyan-500 !text-xl"></i>
-                    </div>
-                </div>
-                <span class="text-primary font-medium">520 </span>
-                <span class="text-muted-color">sample sample</span>
-            </div>
-        </div>
-        <div class="col-span-12 lg:col-span-6 xl:col-span-3">
-            <div class="card mb-0">
-                <div class="flex justify-between mb-4">
-                    <div>
-                        <span class="block text-muted-color font-medium mb-4">Sample</span>
-                        <div class="text-surface-900 dark:text-surface-0 font-medium text-xl">152 sample</div>
-                    </div>
-                    <div class="flex items-center justify-center bg-purple-100 dark:bg-purple-400/10 rounded-border" style="width: 2.5rem; height: 2.5rem">
-                        <i class="pi pi-comment text-purple-500 !text-xl"></i>
-                    </div>
-                </div>
-                <span class="text-primary font-medium">85 </span>
-                <span class="text-muted-color">sample</span>
-            </div>
-        </div>
-
-    </div> -->
 </template>

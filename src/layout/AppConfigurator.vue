@@ -3,7 +3,7 @@ import { useLayout } from '@/layout/composables/layout';
 import { $t, updatePreset, updateSurfacePalette } from '@primevue/themes';
 import Aura from '@primevue/themes/aura';
 import Lara from '@primevue/themes/lara';
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
 
 const { layoutConfig, setPrimary, setSurface, setPreset, isDarkTheme, setMenuMode } = useLayout();
 
@@ -165,6 +165,7 @@ function getPresetExt() {
     }
 }
 
+
 function updateColors(type, color) {
     if (type === 'primary') {
         setPrimary(color.name);
@@ -182,7 +183,21 @@ function applyTheme(type, color) {
         updateSurfacePalette(color.palette);
     }
 }
+onMounted(() => {
+    // Apply default colors for amber (primary) and slate (surface)
+    const defaultPrimaryColor = primaryColors.value.find(c => c.name === 'amber');
+    const defaultSurfaceColor = surfaces.value.find(s => s.name === 'slate');
 
+    if (defaultPrimaryColor) {
+        setPrimary(defaultPrimaryColor.name);
+        updatePreset(getPresetExt());
+    }
+
+    if (defaultSurfaceColor) {
+        setSurface(defaultSurfaceColor.name);
+        updateSurfacePalette(defaultSurfaceColor.palette);
+    }
+});
 function onPresetChange() {
     setPreset(preset.value);
     const presetValue = presets[preset.value];
@@ -226,7 +241,7 @@ function onMenuModeChange() {
                         @click="updateColors('surface', surface)"
                         :class="[
                             'border-none w-5 h-5 rounded-full p-0 cursor-pointer outline-none outline-offset-1',
-                            { 'outline-primary': layoutConfig.surface ? layoutConfig.surface === surface.name : isDarkTheme ? surface.name === 'zinc' : surface.name === 'slate' }
+                            { 'outline-primary': layoutConfig.surface ? layoutConfig.surface === surface.name : isDarkTheme ? surface.name === 'slate' : surface.name === 'zinc' }
                         ]"
                         :style="{ backgroundColor: `${surface.palette['500']}` }"
                     ></button>

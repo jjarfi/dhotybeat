@@ -23,7 +23,7 @@
         <WelcomeApp/>
         </div>        
         <div class="layout-footer">
-            Dothy Beat by
+            Dhoty Beat by
             <a href="https://jjarfi.github.io" target="_blank" rel="noopener noreferrer" class="text-primary font-bold hover:underline">TRITON SOFTWARE</a> 
     </div>
        </div>
@@ -173,10 +173,16 @@
 import { useLayout } from '@/layout/composables/layout';
 import LogoApp from '@/layout/LogoApp.vue';
 import WelcomeApp from '@/layout/WelcomeApp.vue';
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
 const visible = ref(false);
 const visible2 = ref(false);
 const { onMenuToggle, toggleDarkMode, isDarkTheme } = useLayout();
+
+onMounted(() => {
+    if (!isDarkTheme.value) {
+        toggleDarkMode();
+    }
+});
 </script>
 <style scoped>
 </style>
