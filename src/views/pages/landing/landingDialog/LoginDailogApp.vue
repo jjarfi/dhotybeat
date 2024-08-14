@@ -31,7 +31,7 @@
             <label link for="rememberme1" style="margin-top: 7px;">Remember me</label>
             </div>
             <Button 
-              class="no-underline ml-2 text-blue-500 text-right cursor-pointer" link as="router-link" to="/forgot"
+              class="p-0" link as="router-link" to="/forgot"
               >lupa password?</Button>
           </div>
 
