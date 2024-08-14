@@ -51,7 +51,7 @@ const router = createRouter({
         {
             path: '/',
             name: 'dhoty',
-            component: () => import('@/views/DhotyApp.vue')
+            component: () => import('@/views/pages/landing/landingPage/DhotyApp.vue')
         },
         {
             path: '/forgot',

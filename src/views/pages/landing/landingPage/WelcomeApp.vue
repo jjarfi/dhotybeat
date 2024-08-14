@@ -3,7 +3,7 @@
 <div class="card" >
   <div class="flex flex-col md:flex-row" style="height:64vh">
                 <div class="md:w-8/12">
-                  <AppCarousel/>
+                  <CarouselApp/>
                 </div>
                 <div >
                     <Divider layout="vertical" class="!hidden md:!flex"></Divider>
@@ -19,7 +19,7 @@
 
 <script setup>
 import { ref } from "vue";
-import AppCarousel from "./dhotyapps/AppCarousel.vue";
+import CarouselApp from './CarouselApp.vue';
 const visible = ref(false);
 const visible2 = ref(false);
 
