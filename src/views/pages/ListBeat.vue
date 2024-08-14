@@ -1,6 +1,8 @@
 <script setup>
 import { ProductService } from '@/service/ProductService';
 
+import IconPause from '@/layout/dhotyapps/pause.png';
+import IconPlay from '@/layout/dhotyapps/play.png';
 import { onMounted, ref } from 'vue';
 
 const products = ref(null);
@@ -38,6 +40,13 @@ const getSeverity = (product) => {
             return null;
     }
 };
+
+const isPlaying = ref(false);
+
+const togglePlay = () => {
+  isPlaying.value = !isPlaying.value;
+};
+
 </script>
 
 <template>
@@ -64,10 +73,23 @@ const getSeverity = (product) => {
                         <div v-for="(item, index) in slotProps.items" :key="index">
                             <div class="flex flex-col sm:flex-row sm:items-center p-6 gap-4" :class="{ 'border-t border-surface': index !== 0 }">
                                 <div class="md:w-40 relative">
-                                    <img class="block xl:block mx-auto rounded w-full" :src="`https://primefaces.org/cdn/primevue/images/product/${item.image}`" :alt="item.name"/>
-                                   
-                                </div>
-                            
+                                    <img
+      class="block xl:block mx-auto rounded w-full"
+      :src="`https://primefaces.org/cdn/primevue/images/product/${item.image}`"
+      :alt="item.name"
+    />
+    <div
+      class="absolute inset-0 flex items-center justify-center"
+      @click="togglePlay">
+    <div class="audio__player-play-icon">
+        <img
+        :src="isPlaying ? IconPause : IconPlay"
+        class="w-12 h-12 cursor-pointer"
+        alt="Play/Pause Icon"/>
+    </div>       
+      
+    </div>
+                                </div>                           
                                 <div class="flex flex-col md:flex-row justify-between md:items-center flex-1 gap-6">
                                     <div class="flex flex-row md:flex-col justify-between items-start gap-2">
                                         <div>
@@ -98,69 +120,35 @@ const getSeverity = (product) => {
                                         </div>
                                     </div>
                                 </div>
-                                
-                            </div>
-                           
+                            </div> 
                         </div>
                     </div>
-
                 </template>
-                
-            
-
-                <!-- <template #grid="slotProps">
-                    <div class="grid grid-cols-12 gap-4">
-                        <div v-for="(item, index) in slotProps.items" :key="index" class="col-span-12 sm:col-span-6 lg:col-span-4 p-2">
-                            <div class="p-6 border border-surface-200 dark:border-surface-700 bg-surface-0 dark:bg-surface-900 rounded flex flex-col">
-                                <div class="bg-surface-50 flex justify-center rounded p-4">
-                                    <div class="relative mx-auto">
-                                        <img class="rounded w-full" :src="`https://primefaces.org/cdn/primevue/images/product/${item.image}`" :alt="item.name" style="max-width: 300px" preview />
-                                        <Tag :value="item.inventoryStatus" :severity="getSeverity(item)" class="absolute dark:!bg-surface-900" style="left: 4px; top: 4px"></Tag>
-                                    </div>
-                                </div>
-
-                                <div class="pt-6">
-                                    <div class="flex flex-row justify-between items-start gap-2">
-                                        <div>
-                                            <span class="font-medium text-surface-500 dark:text-surface-400 text-sm">{{ item.category }}</span>
-                                            <div class="text-lg font-medium mt-1">{{ item.name }}</div>
-                                        </div>
-                                        <div class="bg-surface-100 p-1" style="border-radius: 30px">
-                                            <div
-                                                class="bg-surface-0 flex items-center gap-2 justify-center py-1 px-2"
-                                                style="
-                                                    border-radius: 30px;
-                                                    box-shadow:
-                                                        0px 1px 2px 0px rgba(0, 0, 0, 0.04),
-                                                        0px 1px 2px 0px rgba(0, 0, 0, 0.06);
-                                                "
-                                            >
-                                                <span class="text-surface-900 font-medium text-sm">{{ item.rating }}</span>
-                                                <i class="pi pi-download text-yellow-500"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="flex flex-col gap-6 mt-6">
-                                        <span class="text-2xl font-semibold">Rp. {{ item.price }}</span>
-                                        <div class="flex gap-2">
-                                            <Button icon="pi pi-download" label="Download" :disabled="item.inventoryStatus === 'OUTOFSTOCK'" class="flex-auto whitespace-nowrap"></Button>
-                                            <Button icon="pi pi-shopping-cart" label="Beli" :disabled="item.inventoryStatus === 'OUTOFSTOCK'" class="flex-auto whitespace-nowrap"></Button>
-                                            <Button icon="pi pi-heart" outlined></Button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </template> -->
             </DataView>  
         </div>
-       
-
     </div>
-   
- 
 </template>
+
+<style scoped>
+.audio__player-play-icon {
+    /* position: absolute; */
+    top: 2.1rem;
+    left: 3.7rem;
+    background: #f0f0f0;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0.5rem;
+    opacity: 0.8;
+  }
+  .audio__player-play-icon img {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    border-radius: 9999px;
+  }
+</style>
 
 
 

@@ -4,11 +4,11 @@ export const ProductService = {
             {
                 id: '1000',
                 code: 'f230fh0g3',
-                name: 'Bamboo Watch',
+                name: 'Beat 001',
                 description: 'Product Description',
                 image: 'bamboo-watch.jpg',
                 price: 65,
-                category: 'Accessories',
+                category: 'Old School',
                 quantity: 24,
                 inventoryStatus: 'INSTOCK',
                 rating: 5
@@ -16,11 +16,11 @@ export const ProductService = {
             {
                 id: '1001',
                 code: 'nvklal433',
-                name: 'Black Watch',
+                name: 'Beat 002',
                 description: 'Product Description',
                 image: 'black-watch.jpg',
                 price: 72,
-                category: 'Accessories',
+                category: 'EDM',
                 quantity: 61,
                 inventoryStatus: 'INSTOCK',
                 rating: 4
@@ -28,11 +28,11 @@ export const ProductService = {
             {
                 id: '1002',
                 code: 'zz21cz3c1',
-                name: 'Blue Band',
+                name: 'Beat 003',
                 description: 'Product Description',
                 image: 'blue-band.jpg',
                 price: 79,
-                category: 'Fitness',
+                category: 'Gangster',
                 quantity: 2,
                 inventoryStatus: 'LOWSTOCK',
                 rating: 3
@@ -40,11 +40,11 @@ export const ProductService = {
             {
                 id: '1003',
                 code: '244wgerg2',
-                name: 'Blue T-Shirt',
+                name: 'Beat 004',
                 description: 'Product Description',
                 image: 'blue-t-shirt.jpg',
                 price: 29,
-                category: 'Clothing',
+                category: 'Old School',
                 quantity: 25,
                 inventoryStatus: 'INSTOCK',
                 rating: 5
@@ -52,11 +52,11 @@ export const ProductService = {
             {
                 id: '1004',
                 code: 'h456wer53',
-                name: 'Bracelet',
+                name: 'Beat 005',
                 description: 'Product Description',
                 image: 'bracelet.jpg',
                 price: 15,
-                category: 'Accessories',
+                category: 'Old School',
                 quantity: 73,
                 inventoryStatus: 'INSTOCK',
                 rating: 4
@@ -64,11 +64,11 @@ export const ProductService = {
             {
                 id: '1005',
                 code: 'av2231fwg',
-                name: 'Brown Purse',
+                name: 'Beat 006',
                 description: 'Product Description',
                 image: 'brown-purse.jpg',
                 price: 120,
-                category: 'Accessories',
+                category: 'EDM',
                 quantity: 0,
                 inventoryStatus: 'OUTOFSTOCK',
                 rating: 4

@@ -1,21 +1,11 @@
 <script setup>
+import audioOptions from './../service/audioOptions';
 import AudioPlayer from './dhotyapps/AudioPlayer.vue';
 
 </script>
 
 <template>
-  <AudioPlayer :option="{
-  src: '/audio/FirstSnow-Emancipator.mp3',
-  title: 'Judul Lagu',
-  progressBarColor: 'var(--primary-color)',
-  indicatorColor: 'var(--primary-color)',
-  coverImage: '/demo/images/product/bamboo-watch.jpg',
-  trackList: [
-      { src: '/audio/FirstSnow-Emancipator.mp3', title: 'First Snow' },
-      { src: '/audio/AnotherTrack.mp3', title: 'Another Track' },
-      // Add more tracks as needed
-    ]
-}"/>
+  <AudioPlayer :option="audioOptions"/>
 </template>
 
 <style scoped>

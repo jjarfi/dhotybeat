@@ -19,7 +19,7 @@
     <div class="album-art-container">
     
     </div>
-    <div class=" flex song-info">
+    <div class=" flex song-info hide-on-mobile">
       <slot name="title">
         <div v-if="option_.title" class="song-title">
           {{ option_.title }}
@@ -619,4 +619,15 @@ const stopTrack = () => {
   align-items: center;
 }
 
+
+/* MOBILE PHONE JUDUL HILANG */
+.hide-on-mobile {
+  display: block;
+}
+
+@media only screen and (max-width: 768px) {
+  .hide-on-mobile {
+    display: none;
+  }
+}
 </style>
